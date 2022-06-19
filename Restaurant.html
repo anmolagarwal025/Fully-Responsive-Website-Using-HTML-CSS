@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="webpage 1.js" defer></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .checked{
+            color: orange;
+        }
+
+        .navbar {
+            /* border: 2px solid black; */
+            box-shadow: 5px 2px 15px 1px grey;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            height: 8vh;
+            flex-wrap: wrap;
+            min-width: 100%;
+            /* position: fixed; */
+        }
+
+        .navigation-tags {
+            display: flex;
+            list-style: none;
+            /* flex-wrap: wrap; */
+        }
+
+        .navigation h1 {
+            color: rgb(36, 180, 36);
+            font-size: 2rem;
+            position: absolute;
+            left: 15rem;
+            margin-top: -5px;
+        }
+
+        .navigation-tags li,
+        a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            color: grey;
+            margin-left: 1.5rem;
+            margin-right: 1rem;
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        .second-section::before {
+            background: url('header-image.jpg') no-repeat center center/cover;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 60vh;
+            top: 8vh;
+            left: 0;
+            z-index: -1;
+        }
+
+        .second-section {
+            min-width: 100%;
+            height: 60vh;
+            /* border: 2px solid black; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .second-section h1 {
+            color: darkblue;
+            font-size: 2rem;
+        }
+
+        .btn {
+            padding: 0.7rem;
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: darkblue;
+            font-weight: bolder;
+            border-radius: 30px;
+            background: transparent;
+        }
+
+        .btn:hover {
+            background: darkblue;
+            color: white;
+            /* border: none; */
+        }
+
+        .third-section {
+            min-width: 100%;
+            height: 80vh;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F9F9F9;
+        }
+
+        .third-section h2 {
+            color: rgb(128, 128, 128);
+        }
+
+        .third-section p {
+            /* border: 2px solid black; */
+            height: 60vh;
+            width: 55vh;
+            /* text-align: center; */
+            font-size: 1.5rem;
+            padding-top: 3rem;
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        .third-section img {
+            height: 45vh;
+            width: 55vh;
+        }
+
+        .fourth-section {
+            /* border: 2px solid black; */
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #F9F9F9;
+        }
+
+        .fourth-section h2 {
+            color: gray;
+            margin-bottom: 3rem;
+            /* border: 2px solid black; */
+            font-size: 2rem;
+        }
+
+        .fourth-section-images {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fourth-section img {
+            height: 35vh;
+            width: 45vh;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .fourth-section img:hover {
+            background-image: gr;
+            /* display: block;
+            width: 45vh;
+            height: 35vh; */
+            z-index: -1;
+        }
+
+        .fourth-section img{
+            margin-left: 4rem;
+        }
+        .fourth-section p{
+            margin-left: 4rem;
+        }
+
+        span {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .fivth-section {
+            /* border: 2px solid black;         This is for Menu ITEMS*/
+            height: 90vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F9F9F9;
+        }
+
+        .fivth-section img {
+            height: 22vh;
+            width: 22vh;
+            border-radius: 50%;
+        }
+
+        .food-menu {
+            display: flex;
+            /* border: 2px solid black; */
+            align-items: center;
+            margin: 1.5rem;
+        }
+
+        .fivth-section p {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: darkblue;
+            margin-left: 0.2rem;
+        }
+
+        .sixth-section {
+            /* border: 2px solid black; */
+            min-width: 100%;
+            height: 65vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #F9F9F9;
+        }
+        .sixth-section h1{
+            font-size: 2.5rem;
+            color: grey;
+            margin-bottom: 1.3rem;
+        }
+        .sixth-section p{
+            font-size: 1.4rem;
+            color: darkblue;
+            margin-top: 1.5rem;
+            font-weight: bold;
+        }
+        .sixth-section-person {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .person {
+            /* border: 2px solid black; */
+            width: 60vh;
+            height: 40vh;
+            margin: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .sixth-section img{
+            width: 15vh;
+            height: 13vh;
+            border-radius: 50%;
+            margin: 1rem;
+        }
+
+        .seventh-section{
+            /* border: 2px solid black; */
+            height: 80vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F9F9F9;
+        }
+        .seventh-section-image img{
+            width: 80vh;
+            height: 60vh;
+        }
+        .form{
+            /* margin-left: 4rem; */
+            /* border: 2px solid black; */
+            width: 80vh;
+            height: 60vh;
+            background: white;
+        }
+        .form input{
+            display: block;
+            border: none;
+            border-bottom: 1px solid darkblue;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            width: 70vh;
+            outline: none;
+            margin-left: 0.5rem;
+        }
+        .form textarea{
+            outline: none;
+            width: 70vh;
+            margin-left: 0.5rem;
+            font-size: 1.2rem;
+            color: darkblue;
+            height: 25vh;
+            display: block;
+            border: none;
+        }
+        .form button{
+            padding: 0.7rem;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            color: white;
+            /* font-weight: bolder; */
+            border-radius: 18px;
+            background: grey;
+            margin-left: 2rem;
+            border: none;
+        }
+
+        .footer{
+            background: gray;
+            height: 8vh;
+            min-width: 100%;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media only screen and (max-width: 1300px) {
+            .navbar{
+                min-width: 262%;
+            }
+            .navigation h1{
+                left: 4rem;
+            }
+            .second-section{
+                min-width: 262%;
+            }
+            .second-section::before{
+            background: url('header-image.jpg') no-repeat center center/cover;
+            content: "";
+            position: absolute;
+            width: 262%;
+            height: 60vh;
+            top: 8vh;
+            left: 0;
+            z-index: -1;
+            }
+            .third-section{
+                min-width: 262%;
+            }
+            .fourth-section{
+                width: 262%;
+            }
+            .fourth-section img{
+                width: 30vh;
+                height: 30vh;
+            }
+            .fivth-section{
+                min-width: 262%;
+            }
+            .sixth-section{
+                width: 262%;
+            }
+            .person{
+                width: 33vh;
+                height: 30vh;
+            }
+            .seventh-section{
+                width: 262%;
+            }
+            .seventh-section-image{
+                /* width: 5vh;
+                height: 5vh; */
+                display: none;
+            }
+            .form{
+                width: 5vh;
+                height: 5vh;
+                margin-top: -40rem;
+                margin-left: -40rem;
+            }
+            .footer{
+                min-width: 262%;
+            }
+        }
+    </style>
+    <title>AN Restaurant</title>
+</head>
+
+<body>
+    <header class="navbar" id="first">
+        <nav class="navigation">
+            <h1 class="logo">AN</h1>
+            <ul class="navigation-tags">
+                <li><a href="#first">HOME</a></li>
+                <li><a href="#third">ABOUT</a></li>
+                <li><a href="#fourth">SERVICES</a></li>
+                <li><a href="#fivth">MEALS</a></li>
+                <li><a href="#sixth">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="second-section" id="second">
+        <h1>EAT HEALTHY.STAY HEALTHY.</h1>
+        <button class="btn">ORDER NOW</button>
+    </section>
+
+    <section class="third-section" id="third">
+        <div class="para">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione odit et harum beatae necessitatibus
+                animi itaque cum optio labore quos! Accusamus rem, sed odit voluptatem recusandae, quisquam animi quod
+                vitae suscipit necessitatibus temporibus distinctio cupiditate odio accusantium velit praesentium ipsam.
+            </p>
+        </div>
+        <img src="about-photo.jpg" alt="">
+    </section>
+
+    <section class="fourth-section" id="fourth">
+        <h2>Our Services</h2>
+        <div class="fourth-section-images">
+            <div>
+                <img src="food1.jpg" alt="">
+                <p><span>Fruits</span></p>
+            </div>
+            <div>
+                <img src="food2.jpg" alt="">
+                <p><span>Vegetables</span></p>
+            </div>
+            <div>
+                <img src="food3.jpg" alt="">
+                <p><span>Grains</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="fivth-section" id="fivth">
+        <div class="fivth-section-images1">
+            <div class="food-menu">
+                <img src="food-menu1.jpg" alt="">
+                <p>Food Menu Item 1 <br> Lorem ipsum dolor sit amet consectetur.<br> <strong
+                        style="font-size:1.3rem;color:gray"> Price :- Rs 250.</strong></p>
+            </div>
+            <div class="food-menu">
+                <img src="food-menu2.jpg" alt="">
+                <p>Food Menu Item 2 <br> Lorem ipsum dolor sit amet consectetur.<br> <strong
+                        style="font-size:1.3rem;color:gray"> Price :- Rs 250.</strong></p>
+            </div>
+            <div class="food-menu">
+                <img src="food-menu3.jpg" alt="">
+                <p>Food Menu Item 3 <br> Lorem ipsum dolor sit amet consectetur.<br> <strong
+                        style="font-size:1.3rem;color:gray"> Price :- Rs 250.</strong></p>
+            </div>
+        </div>
+        <div class="fivth-section-images2">
+            <div class="food-menu">
+                <img src="food-menu4.jpg" alt="">
+                <p>Food Menu Item 4 <br> Lorem ipsum dolor sit amet consectetur.<br> <strong
+                        style="font-size:1.3rem;color:gray"> Price :- Rs 250.</strong></p>
+            </div>
+            <div class="food-menu">
+                <img src="food-menu5.jpg" alt="">
+                <p>Food Menu Item 5 <br> Lorem ipsum dolor sit amet consectetur.<br> <strong
+                        style="font-size:1.3rem;color:gray"> Price :- Rs 250.</strong></p>
+            </div>
+            <div class="food-menu">
+                <img src="food-menu6.jpg" alt="">
+                <p>Food Menu Item 6 <br> Lorem ipsum dolor sit amet consectetur.<br> <strong
+                        style="font-size:1.3rem;color:gray"> Price :- Rs 250.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sixth-section" id="sixth">
+        <h1>What Our Customer Say</h1>
+        <div class="sixth-section-person">
+            <div class="person">
+                <span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked"></span></span></span></span></span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui placeat distinctio dignissimos consequatur saepe</p>
+                <img src="male-photo1.jpg" alt="">
+            </div>
+            <div class="person">
+                <span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked"></span></span></span></span></span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus incidunt laudantium reiciendis</p>
+                <img src="male-photo2.jpg" alt="">
+            </div>
+            <div class="person">
+                <span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked"></span></span></span></span></span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nisi veritatis quo quaerat consequuntur quibusdam</p>
+                <img src="male-photo3.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="seventh-section">
+        <div class="seventh-section-image">
+            <img src="restraunt-image.jpg" alt="">
+        </div>
+        <div class="form">
+            <h1 style="font-size: 2rem;color:darkblue;margin: 1rem;">Contact Us</h1>
+            <input type="text" name="" placeholder="Name">
+            <input type="email" name="" placeholder="Email">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Type Your Request here.."></textarea>
+            <button class="bttn">Submit</button>
+        </div>
+    </section>
+
+    <footer class="footer">AN Restaurant Website &copy; 2022, All Right Resvered</footer>
+</body>
+</html>
